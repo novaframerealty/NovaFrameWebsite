@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #6366f1;
+    --color-secondary: #f97316;
+    --color-accent: #10b981;
+  }
+  .dark {
+    --color-primary: #818cf8;
+    --color-secondary: #fb923c;
+    --color-accent: #34d399;
+  }
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block px-4 py-2 rounded bg-primary text-white font-medium hover:bg-secondary transition-colors;
+  }
+  .card {
+    @apply p-6 bg-white dark:bg-gray-800 rounded shadow;
+  }
+  .input {
+    @apply w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-primary dark:bg-gray-900 dark:border-gray-700;
+  }
+}
