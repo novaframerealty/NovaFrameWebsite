@@ -13,6 +13,9 @@ This project was bootstrapped with [Vite](https://vitejs.dev/) and uses React + 
 
 - [React Router](https://reactrouter.com/) for client-side routing
 - [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Framer Motion](https://www.framer.com/motion/) for animations
 - [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for code quality
 
 Copy `.env.example` to `.env` and set environment variables as needed.
+
+Use the moon icon in the navigation bar to toggle dark mode.

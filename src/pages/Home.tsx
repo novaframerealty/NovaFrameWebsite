@@ -3,22 +3,19 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   return (
     <div>
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-r from-primary to-accent text-white">
+      <section className="relative h-[80vh] flex items-center justify-center text-white bg-animated-gradient">
         <div className="text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4">
-            Find Your Dream Home
+          <h1 className="text-4xl md:text-7xl font-heading font-bold mb-6">
+            Next-Gen Property Management Software
           </h1>
-          <p className="mb-6 text-lg md:text-2xl">
-            Building spaces that inspire
-          </p>
-          <Link to="/contact" className="btn">
-            Contact Us
+          <Link to="/contact" className="btn text-lg">
+            Request a Demo
           </Link>
         </div>
       </section>
       <section className="py-12 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 text-center">
-          <div className="card">
+          <div className="card hover:scale-105 transition-transform">
             <div className="mb-4 text-primary">
               <svg
                 className="w-12 h-12 mx-auto"
@@ -30,16 +27,19 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M3 12l2-2m0 0l7-7 7 7m-9 9v-6h4v6m5-6h2a2 2 0 002-2V7a2 2 0 00-2-2h-3m-6 0H5a2 2 0 00-2 2v3a2 2 0 002 2h2"
+                  d="M12 8v4l3 3"
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-heading mb-2">Quality Homes</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Crafted with attention to detail.
+            <h3 className="text-xl font-heading mb-2">Automated Listings</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-2">
+              Post and update property listings automatically.
             </p>
+            <Link to="/features" className="text-primary hover:underline">
+              Learn More
+            </Link>
           </div>
-          <div className="card">
+          <div className="card hover:scale-105 transition-transform">
             <div className="mb-4 text-primary">
               <svg
                 className="w-12 h-12 mx-auto"
@@ -51,16 +51,19 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M12 8c1.1046 0 2-.8954 2-2s-.8954-2-2-2-2 .8954-2 2 .8954 2 2 2zm0 0c-4.4183 0-8 1.7909-8 4v5h16v-5c0-2.2091-3.5817-4-8-4z"
+                  d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6m4 0H5"
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-heading mb-2">Expert Team</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              Professionals ready to help.
+            <h3 className="text-xl font-heading mb-2">Maintenance Tracker</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-2">
+              Stay on top of repair requests and schedules.
             </p>
+            <Link to="/features" className="text-primary hover:underline">
+              Learn More
+            </Link>
           </div>
-          <div className="card">
+          <div className="card hover:scale-105 transition-transform">
             <div className="mb-4 text-primary">
               <svg
                 className="w-12 h-12 mx-auto"
@@ -72,14 +75,47 @@ export default function Home() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M12 8c-1.105 0-2 .672-2 1.5S10.895 11 12 11s2-.672 2-1.5S13.105 8 12 8zm0 0v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M11 11V9a1 1 0 012 0v2m0 0v2m0-2h2m-2 0H9m11 4a8 8 0 10-14 0 8 8 0 0014 0z"
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-heading mb-2">Great Support</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              We are here for you 24/7.
+            <h3 className="text-xl font-heading mb-2">
+              Data Analytics Dashboard
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-2">
+              Visualize trends and metrics in real time.
             </p>
+            <Link to="/features" className="text-primary hover:underline">
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 bg-white dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-2xl font-heading mb-6 text-center">
+            Built on Cutting-Edge Tech
+          </h2>
+          <p className="text-center mb-4 text-gray-600 dark:text-gray-300">
+            RESTful APIs and WebSockets power real-time updates and cloud-native
+            scalability.
+          </p>
+          <div className="flex overflow-x-auto gap-8 py-4 items-center justify-center">
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/aws.svg"
+              alt="AWS"
+              className="h-12"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/postgresql.svg"
+              alt="PostgreSQL"
+              className="h-12"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/stripe.svg"
+              alt="Stripe"
+              className="h-12"
+            />
           </div>
         </div>
       </section>
