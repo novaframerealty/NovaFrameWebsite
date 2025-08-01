@@ -2,17 +2,17 @@ import { useState, type FormEvent } from 'react'
 
 interface FormState {
   name: string
+  company: string
   email: string
-  subject: string
-  message: string
+  time: string
 }
 
 export default function Contact() {
   const [form, setForm] = useState<FormState>({
     name: '',
+    company: '',
     email: '',
-    subject: '',
-    message: '',
+    time: '',
   })
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<Partial<FormState>>({})
@@ -20,10 +20,10 @@ export default function Contact() {
   const validate = (): boolean => {
     const newErrors: Partial<FormState> = {}
     if (!form.name.trim()) newErrors.name = 'Name is required'
+    if (!form.company.trim()) newErrors.company = 'Company is required'
     if (!/^[^@\s]+@[^@\s]+$/.test(form.email))
       newErrors.email = 'Valid email is required'
-    if (!form.subject.trim()) newErrors.subject = 'Subject is required'
-    if (!form.message.trim()) newErrors.message = 'Message is required'
+    if (!form.time.trim()) newErrors.time = 'Preferred time is required'
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -45,7 +45,7 @@ export default function Contact() {
     return (
       <div className="p-8 text-center">
         <h1 className="text-2xl font-heading mb-2">Thank you!</h1>
-        <p>We will be in touch soon.</p>
+        <p>We will be in touch soon to schedule your demo.</p>
       </div>
     )
   }
@@ -54,11 +54,20 @@ export default function Contact() {
     <div className="max-w-7xl mx-auto px-4 py-8 grid gap-8 md:grid-cols-2">
       <div>
         <h1 className="text-3xl font-heading mb-4">Contact Us</h1>
-        <p className="mb-2">Come visit us or send us a message.</p>
+        <p className="mb-2">
+          Reach out for a personalized demo or any questions.
+        </p>
         <address className="not-italic mb-4">
           123 Realty Avenue
           <br />
           Hometown, USA
+          <br />
+          <a
+            href="mailto:support@novaframerealty.com"
+            className="text-primary hover:underline"
+          >
+            support@novaframerealty.com
+          </a>
         </address>
         <div className="flex gap-4 text-primary">
           <a href="#" aria-label="Twitter">
@@ -90,6 +99,19 @@ export default function Contact() {
         <div>
           <input
             className="input"
+            type="text"
+            name="company"
+            placeholder="Company"
+            value={form.company}
+            onChange={handleChange}
+          />
+          {errors.company && (
+            <p className="text-red-500 text-sm mt-1">{errors.company}</p>
+          )}
+        </div>
+        <div>
+          <input
+            className="input"
             type="email"
             name="email"
             placeholder="Email"
@@ -104,26 +126,13 @@ export default function Contact() {
           <input
             className="input"
             type="text"
-            name="subject"
-            placeholder="Subject"
-            value={form.subject}
+            name="time"
+            placeholder="Preferred Demo Time"
+            value={form.time}
             onChange={handleChange}
           />
-          {errors.subject && (
-            <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
-          )}
-        </div>
-        <div>
-          <textarea
-            className="input"
-            name="message"
-            rows={4}
-            placeholder="Message"
-            value={form.message}
-            onChange={handleChange}
-          />
-          {errors.message && (
-            <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+          {errors.time && (
+            <p className="text-red-500 text-sm mt-1">{errors.time}</p>
           )}
         </div>
         <button type="submit" className="btn">

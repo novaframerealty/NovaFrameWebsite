@@ -13,6 +13,9 @@ export default {
         sans: ['Inter', 'sans-serif'],
         heading: ['Poppins', 'sans-serif'],
       },
+      spacing: {
+        128: '32rem',
+      },
       fontSize: {
         base: '1rem',
         lg: '1.125rem',
