@@ -7,14 +7,16 @@
     --color-primary: #00b4d8; /* electric blue */
     --color-secondary: #1e293b; /* dark slate */
     --color-accent: #3ff69a; /* neon accent */
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
   }
   .dark {
     --color-primary: #3ff69a;
     --color-secondary: #0f172a;
     --color-accent: #00b4d8;
   }
-  html {
-    font-family: 'Inter', sans-serif;
+  body {
+    @apply font-body;
   }
   h1,
   h2,
@@ -22,7 +24,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Poppins', sans-serif;
+    @apply font-heading;
   }
 }
 
@@ -38,25 +40,8 @@
   }
 }
 
-@keyframes gradient-move {
-  0% {
-    background-position: 0% 50%;
+@layer utilities {
+  .bg-hero {
+    @apply bg-gradient-to-br from-sky-500 via-green-500 to-teal-700;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.bg-animated-gradient {
-  background: linear-gradient(
-    -45deg,
-    var(--color-primary),
-    var(--color-accent),
-    var(--color-secondary)
-  );
-  background-size: 400% 400%;
-  animation: gradient-move 15s ease infinite;
 }
