@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   return (
     <div>
-      <section className="relative h-[80vh] flex items-center justify-center text-white bg-animated-gradient">
-        <div className="text-center px-4">
+      <section className="relative h-[80vh] flex items-center justify-center text-white bg-hero before:absolute before:inset-0 before:bg-black/40 before:content-['']">
+        <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-7xl font-heading font-bold mb-6">
             Next-Gen Property Management Software
           </h1>
