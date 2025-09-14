@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
+import Hero from '../components/Hero'
 
 export default function Home() {
   return (
     <div>
-      <section className="relative h-[80vh] flex items-center justify-center text-white bg-hero before:absolute before:inset-0 before:bg-black/40 before:content-['']">
+      <Hero className="relative h-[80vh] flex items-center justify-center before:absolute before:inset-0 before:bg-black/40 before:content-['']">
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-7xl font-heading font-bold mb-6">
             Next-Gen Property Management Software
@@ -12,7 +13,7 @@ export default function Home() {
             Request a Demo
           </Link>
         </div>
-      </section>
+      </Hero>
       <section className="py-12 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 text-center">
           <div className="card hover:scale-105 transition-transform">
